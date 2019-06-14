@@ -20,4 +20,10 @@ public class SmokeTest extends TestRunner {
         Assert.assertEquals(homePage.getTitleWordsText(), expectedTitle);
     }
 
+    @Test
+    public void pageObjectFunctionalTest() {
+        HomePage homePage = loadApplication()
+                .findByPlaceName("Kyiv");
+    }
+
 }

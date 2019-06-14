@@ -8,6 +8,7 @@ public class HomePage extends HeaderPart {
 
     private WebElement titleWords;
     private WebElement description;
+    private WebElement grayBox;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -17,6 +18,7 @@ public class HomePage extends HeaderPart {
     private void initElements() {
         titleWords = driver.findElement(By.cssSelector("h1"));
         description = driver.findElement(By.cssSelector("main p"));
+        grayBox = driver.findElement(By.cssSelector(".graybox"));
     }
 
     // Page Object
@@ -41,7 +43,25 @@ public class HomePage extends HeaderPart {
         return getDescription().getText();
     }
 
+    // grayBox
+
+    public WebElement getGrayBox() {
+        return grayBox;
+    }
+
+    public GrayBoxComponent getGrayBoxComponent() {
+        return new GrayBoxComponent(getGrayBox());
+    }
+
     // Functional
+
+    public HomePage findByPlaceName(String name) {
+        getGrayBoxComponent().clickPlaceName();
+        getGrayBoxComponent().clearPlaceName();
+        getGrayBoxComponent().setPlaceName(name);
+        getGrayBoxComponent().clickFind();
+        return new HomePage(driver);
+    }
 
     // Business Logic
 
