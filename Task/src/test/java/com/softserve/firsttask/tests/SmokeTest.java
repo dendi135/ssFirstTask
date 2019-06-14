@@ -1,17 +1,23 @@
 package com.softserve.firsttask.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.softserve.firsttask.pages.HomePage;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SmokeTest extends TestRunner {
 
-    @Test
-    public void smokeTest() {
-        WebElement actualTitle = driver.findElement(By.cssSelector("h1"));
-        String expectedTitle = "Get Latitude and Longitude";
-        Assert.assertEquals(actualTitle.getText(), expectedTitle);
+    @DataProvider(name = "textProvider")
+    public Object[][] correctData() {
+        return new Object[][]{
+                {"Get Latitude and Longitude"}
+        };
+    }
+
+    @Test(dataProvider = "textProvider")
+    public void smokeTest(String expectedTitle) {
+        HomePage homePage  = loadApplication();
+        Assert.assertEquals(homePage.getTitleWordsText(), expectedTitle);
     }
 
 }

@@ -3,6 +3,7 @@ package com.softserve.firsttask.tests;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import com.softserve.firsttask.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -43,6 +44,10 @@ public abstract class TestRunner {
         if (!testResult.isSuccess()) {
             driver.get(SERVER_URL);
         }
+    }
+
+    public HomePage loadApplication() {
+        return new HomePage(driver);
     }
 
 }
