@@ -45,7 +45,7 @@ public abstract class HeaderPart {
         return logo;
     }
 
-    public void clickMyAccount() {
+    public void clickLogo() {
         getLogo().click();
     }
 

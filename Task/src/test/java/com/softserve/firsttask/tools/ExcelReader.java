@@ -52,7 +52,6 @@ public class ExcelReader extends FileReader {
             try {
                 workBook.close();
             } catch (IOException e) {
-                // TODO Develop Custom Exceptions
                 throw new RuntimeException(String.format(FILE_NOT_CLOSE_EXCEPTION, path), e);
             }
         }
