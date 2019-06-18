@@ -9,7 +9,7 @@ public abstract class FileReader implements ExternalReader {
 
     public FileReader(String filename) {
         this.filename = filename;
-        this.path = this.getClass().getResource(PATH_SEPARATOR + filename).getPath().substring(1);
+        this.path = this.getClass().getResource(PATH_SEPARATOR + filename).getPath();
         System.out.println("***PATH = " + path);
     }
     
@@ -27,5 +27,5 @@ public abstract class FileReader implements ExternalReader {
     public List<List<String>> getAllCells() {
         return getAllCells(path);
     }
-
+    //target/test-classes/places.xlsx
 }

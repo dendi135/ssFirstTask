@@ -1,5 +1,6 @@
 package com.softserve.firsttask.tests;
 
+import com.softserve.firsttask.data.UserRepository;
 import com.softserve.firsttask.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -24,6 +25,11 @@ public class SmokeTest extends TestRunner {
     public void pageObjectFunctionalTest() {
         HomePage homePage = loadApplication()
                 .findByPlaceName("Kyiv");
+    }
+
+    @Test
+    public void externalReaderTest() {
+        System.out.printf(UserRepository.fromExcel("places.xlsx").get(2).getName());
     }
 
 }

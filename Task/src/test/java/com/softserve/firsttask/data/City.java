@@ -47,7 +47,7 @@ public class City {
     
     public static List<City> getByLists(List<List<String>> rows) {
         List<City> result = new ArrayList<>();
-        if (!rows.get(0).get(3).contains("@")) {
+        if (!rows.get(0).get(2).contains("@")) {
             rows.remove(0);
         }
         for (List<String> currentRow : rows) {

@@ -28,6 +28,6 @@ public final class UserRepository {
     }
 
     public static List<City> fromExcel() {
-        return fromExcel("places.csv");
+        return fromExcel("places.xlsx");
     }
 }
