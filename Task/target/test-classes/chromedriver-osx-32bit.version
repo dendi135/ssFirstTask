@@ -1,7 +1,0 @@
-{
-  "name": "chromedriver",
-  "platform": "osx",
-  "bit": "32",
-  "version": "75.0.3770.90",
-  "url": "https://chromedriver.storage.googleapis.com/75.0.3770.90/chromedriver_mac64.zip"
-}
