@@ -10,7 +10,7 @@ public abstract class FileReader implements ExternalReader {
     public FileReader(String filename) {
         this.filename = filename;
         this.path = this.getClass().getResource(PATH_SEPARATOR + filename).getPath();
-        System.out.println("***PATH = " + path);
+        // System.out.println("***PATH = " + path);
     }
     
     public String getFilename() {

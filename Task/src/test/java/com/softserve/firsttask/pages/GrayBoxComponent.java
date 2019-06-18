@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 
 public class GrayBoxComponent {
 
+    private final String VALUE = "value";
+
     private WebElement grayBox;
+
     WebElement placeName;
     WebElement find;
     WebElement latitude;
@@ -53,10 +56,6 @@ public class GrayBoxComponent {
         return find;
     }
 
-    public String getFindText() {
-        return getFind().getText();
-    }
-
     public void clickFind() {
         getFind().click();
     }
@@ -67,8 +66,8 @@ public class GrayBoxComponent {
         return latitude;
     }
 
-    public String getLatitudeText() {
-        return getLatitude().getText();
+    public String getLatitudeValue() {
+        return getLatitude().getAttribute(VALUE);
     }
 
     public void clickLatitude() {
@@ -81,8 +80,8 @@ public class GrayBoxComponent {
         return longitude;
     }
 
-    public String getLongitudeText() {
-        return getLongitude().getText();
+    public String getLongitudeValue() {
+        return getLongitude().getAttribute(VALUE);
     }
 
     public void clickLongitude() {
