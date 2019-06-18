@@ -26,21 +26,13 @@ public class ExcelReader extends FileReader {
         List<List<String>> allCells = new ArrayList<List<String>>();
         InputStream inputStream = null;
         DataFormatter formatter = new DataFormatter();
-        // For *.xls files
-        // HSSFWorkbook workBook;
-        // For *.xlsx files
-        // XSSFWorkbook workBook = null;
         XSSFWorkbook workBook = null;
         Sheet sheet = null;
         try {
-            // System.out.println("filename=" + connection);
             inputStream = new FileInputStream(path);
-            // workBook = new HSSFWorkbook(inputStream);
             workBook = new XSSFWorkbook(inputStream);
-            // sheet = (new XSSFWorkbook(inputStream)).getSheetAt(0);
             sheet = workBook.getSheetAt(MAIN_BY_NUMBER_SHEET);
         } catch (FileNotFoundException e) {
-            // TODO Develop Custom Exception
             throw new RuntimeException(String.format(FILE_NOT_FOUND_EXCEPTION, path));
         } catch (IOException e) {
             throw new RuntimeException(String.format(FILE_NOT_READ_EXCEPTION, path));
@@ -50,19 +42,11 @@ public class ExcelReader extends FileReader {
             Row row = rowsIterator.next();
             Iterator<Cell> cellsIterator = row.iterator();
             List<String> allRowCells = new ArrayList<String>();
-            // System.out.println("\n ***allRowCells = ");
             while (cellsIterator.hasNext()) {
-                // For Old Version of XSSFWorkbook
-                // String cell = cellsIterator.next().getStringCellValue();
-                // For New Version of XSSFWorkbook
                 String cell = formatter.formatCellValue(cellsIterator.next());
-                // allCells.add(cellsIterator.next().getStringCellValue());
-                // System.out.println("\t\t*** cell = " + cell);
                 allRowCells.add(cell);
-                // System.out.print(" " + cell);
             }
             allCells.add(allRowCells);
-            // System.out.println();
         }
         if (workBook != null) {
             try {

@@ -21,8 +21,6 @@ public final class PlacesRepository {
         return new City("Ivano-Frankivsk", "48.922633", "24.711117");
     }
 
-//
-
     public static List<City> fromExcel(String filename) {
         return City.getByLists(new ExcelReader(filename).getAllCells());
     }
