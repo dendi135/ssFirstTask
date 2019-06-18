@@ -1,0 +1,12 @@
+com/softserve/firsttask/pages/HeaderPart.class
+com/softserve/firsttask/tools/FileReader.class
+com/softserve/firsttask/data/PlacesRepository.class
+com/softserve/firsttask/pages/HomePage.class
+com/softserve/firsttask/tests/TestRunner.class
+com/softserve/firsttask/tests/ValuesTest.class
+com/softserve/firsttask/data/City.class
+com/softserve/firsttask/tests/SmokeTest.class
+com/softserve/firsttask/tools/ExcelReader.class
+com/softserve/firsttask/tools/ExternalReader.class
+com/softserve/firsttask/tools/ListUtils.class
+com/softserve/firsttask/pages/GrayBoxComponent.class
