@@ -39,8 +39,6 @@ public class City {
         this.longtitude = longtitude;
     }
 
-    //
-
     public static City getByList(List<String> row) {
         return new City(row.get(0), row.get(1), row.get(2));
     }
