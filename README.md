@@ -5,3 +5,7 @@ Task 1.
 3. Type in the place name and click Find
 4. Assert that lat and long displayed on the site is the same as from the xlsx file
 5. Use dataprovider for running tests with all the dada from places.xlxs
+
+# Launch instruction
+1. Open project in your IDE
+2. Run Maven test phase (use "mvn test" command)
