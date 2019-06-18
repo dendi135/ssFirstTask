@@ -1,6 +1,6 @@
 package com.softserve.firsttask.tests;
 
-import com.softserve.firsttask.data.UserRepository;
+import com.softserve.firsttask.data.PlacesRepository;
 import com.softserve.firsttask.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -29,7 +29,7 @@ public class SmokeTest extends TestRunner {
 
     @Test
     public void externalReaderTest() {
-        System.out.printf(UserRepository.fromExcel("places.xlsx").get(2).getName());
+        System.out.printf(PlacesRepository.fromExcel("places.xlsx").get(2).getName());
     }
 
 }

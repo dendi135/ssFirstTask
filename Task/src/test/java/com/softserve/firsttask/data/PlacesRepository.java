@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.softserve.firsttask.tools.ExcelReader;
 
-public final class UserRepository {
+public final class PlacesRepository {
 
-   private UserRepository() {
+   private PlacesRepository() {
    }
 
    public static City getKyiv() {

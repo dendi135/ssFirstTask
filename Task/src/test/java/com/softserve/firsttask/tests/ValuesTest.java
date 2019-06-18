@@ -1,6 +1,6 @@
 package com.softserve.firsttask.tests;
 
-import com.softserve.firsttask.data.UserRepository;
+import com.softserve.firsttask.data.PlacesRepository;
 import com.softserve.firsttask.pages.GrayBoxComponent;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -11,15 +11,15 @@ public class ValuesTest extends TestRunner {
     @DataProvider(name = "valuesProvider")
     public Object[][] correctData() {
         return new Object[][]{
-                {UserRepository.fromExcel().get(0).getName(),
-                        UserRepository.fromExcel().get(0).getLatitude(),
-                        UserRepository.fromExcel().get(0).getLongtitude()},
-                {UserRepository.fromExcel().get(1).getName(),
-                        UserRepository.fromExcel().get(1).getLatitude(),
-                        UserRepository.fromExcel().get(1).getLongtitude()},
-                {UserRepository.fromExcel().get(2).getName(),
-                        UserRepository.fromExcel().get(2).getLatitude(),
-                        UserRepository.fromExcel().get(2).getLongtitude()}
+                {PlacesRepository.fromExcel().get(0).getName(),
+                        PlacesRepository.fromExcel().get(0).getLatitude(),
+                        PlacesRepository.fromExcel().get(0).getLongtitude()},
+                {PlacesRepository.fromExcel().get(1).getName(),
+                        PlacesRepository.fromExcel().get(1).getLatitude(),
+                        PlacesRepository.fromExcel().get(1).getLongtitude()},
+                {PlacesRepository.fromExcel().get(2).getName(),
+                        PlacesRepository.fromExcel().get(2).getLatitude(),
+                        PlacesRepository.fromExcel().get(2).getLongtitude()}
         };
     }
 
