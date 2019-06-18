@@ -144,6 +144,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
                     <argLine>-Xms512m -Xmx1024m</argLine>
                     <!-- <argLine>-Xms256m -Xmx512m</argLine> -->
                     <systemPropertyVariables>
@@ -155,14 +156,12 @@
                         </selenium.version>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>RestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>LockingTestRestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>Rest_Suite_3.xml</suiteXmlFile>
+                        <suiteXmlFile>MySuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <reportsDirectory>${testng.reports.directory}</reportsDirectory>
-                    <argLine>
+                    <!--<argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
+                    </argLine>-->
                 </configuration>
             </plugin>
 
