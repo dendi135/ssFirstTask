@@ -7,5 +7,6 @@ Task 1.
 5. Use dataprovider for running tests with all the dada from places.xlxs
 
 # Launch instruction
-1. Open project in your IDE
-2. Run Maven test phase (use "mvn test" command)
+1. Make sure that your Goggle Chrome version is 75.
+2. If you don't have this version of browser - update your browser or change WebDriver version in "pom.xml" file in Surefire plugin section or "webdriver.version" property.
+4. Run Maven test phase (use "mvn clean test" command)
