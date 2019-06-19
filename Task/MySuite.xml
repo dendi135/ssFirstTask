@@ -4,6 +4,7 @@
 
     <test name="ValuesTest">
         <classes>
+            <class name="com.softserve.firsttask.tests.SmokeTest" />
             <class name="com.softserve.firsttask.tests.ValuesTest" />
         </classes>
     </test> <!-- Test -->

@@ -8,16 +8,10 @@ import org.testng.annotations.Test;
 
 public class SmokeTest extends TestRunner {
 
-    @DataProvider(name = "textProvider")
-    public Object[][] correctData() {
-        return new Object[][]{
-                {"Get Latitude and Longitude"}
-        };
-    }
-
-    @Test(dataProvider = "textProvider")
-    public void smokeTest(String expectedTitle) {
+    @Test
+    public void smokeTest() {
         HomePage homePage  = loadApplication();
+        String expectedTitle = "Get Latitude and Longitude";
         Assert.assertEquals(homePage.getTitleWordsText(), expectedTitle);
     }
 
