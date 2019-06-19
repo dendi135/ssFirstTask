@@ -20,12 +20,12 @@ public class SmokeTest extends TestRunner {
         HomePage homePage = loadApplication()
                 .findByPlaceName("Kyiv");
         String expectedLat = "50.447731";
-        Assert.assertEquals(homePage.getGrayBoxComponent().getLatitude(), expectedLat);
+        Assert.assertEquals(homePage.getGrayBoxComponent().getLatitudeValue(), expectedLat);
     }
 
     @Test
     public void externalReaderTest() {
-        String expectedName = "Lviv";
+        String expectedName = "Ivano-Frankivsk";
         Assert.assertEquals(PlacesRepository.fromExcel().get(2).getName(), expectedName);
     }
 
