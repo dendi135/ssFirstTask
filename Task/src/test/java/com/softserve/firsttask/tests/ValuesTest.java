@@ -1,7 +1,7 @@
 package com.softserve.firsttask.tests;
 
 import com.softserve.firsttask.data.PlacesRepository;
-import com.softserve.firsttask.pages.GrayBoxComponent;
+import com.softserve.firsttask.pages.SearchPlaceComponent;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -25,11 +25,11 @@ public class ValuesTest extends TestRunner {
 
     @Test(dataProvider = "valuesProvider")
     public void checkValues(String expectedName, String expectedLat, String expectedLong) {
-        GrayBoxComponent grayBoxComponent = loadApplication()
+        SearchPlaceComponent searchPlaceComponent = loadApplication()
                 .findByPlaceName(expectedName)
                 .getGrayBoxComponent();
-        Assert.assertEquals(grayBoxComponent.getLatitudeValue(), expectedLat);
-        Assert.assertEquals(grayBoxComponent.getLongitudeValue(), expectedLong);
+        Assert.assertEquals(searchPlaceComponent.getLatitudeValue(), expectedLat);
+        Assert.assertEquals(searchPlaceComponent.getLongitudeValue(), expectedLong);
     }
 
 }

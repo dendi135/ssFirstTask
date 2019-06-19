@@ -6,26 +6,16 @@ import com.softserve.firsttask.tools.ExcelReader;
 
 public final class PlacesRepository {
 
+    private static final String FILE_NAME = "places.xlsx";
+
    private PlacesRepository() {
    }
-
-   public static City getKyiv() {
-      return new City("Kyiv", "50.450100", "30.523400");
-   }
-
-   public static City getLviv() {
-      return new City("Lviv", "49.839683", "24.029717");
-   }
-
-    public static City getIvanoFrankivsk() {
-        return new City("Ivano-Frankivsk", "48.922633", "24.711117");
-    }
 
     public static List<City> fromExcel(String filename) {
         return City.getByLists(new ExcelReader(filename).getAllCells());
     }
 
     public static List<City> fromExcel() {
-        return fromExcel("places.xlsx");
+        return fromExcel(FILE_NAME);
     }
 }

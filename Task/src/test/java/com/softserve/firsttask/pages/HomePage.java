@@ -49,8 +49,8 @@ public class HomePage extends HeaderPart {
         return grayBox;
     }
 
-    public GrayBoxComponent getGrayBoxComponent() {
-        return new GrayBoxComponent(getGrayBox());
+    public SearchPlaceComponent getGrayBoxComponent() {
+        return new SearchPlaceComponent(getGrayBox());
     }
 
     // Functional

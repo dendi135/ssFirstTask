@@ -3,7 +3,7 @@ package com.softserve.firsttask.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class GrayBoxComponent {
+public class SearchPlaceComponent {
 
     private final String VALUE = "value";
 
@@ -14,7 +14,7 @@ public class GrayBoxComponent {
     WebElement latitude;
     WebElement longitude;
 
-    public GrayBoxComponent(WebElement grayBox) {
+    public SearchPlaceComponent(WebElement grayBox) {
         this.grayBox = grayBox;
         initelements();
     }

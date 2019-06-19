@@ -25,11 +25,14 @@ public class SmokeTest extends TestRunner {
     public void pageObjectFunctionalTest() {
         HomePage homePage = loadApplication()
                 .findByPlaceName("Kyiv");
+        String expectedLat = "50.447731";
+        Assert.assertEquals(homePage.getGrayBoxComponent().getLatitude(), expectedLat);
     }
 
     @Test
     public void externalReaderTest() {
-        System.out.printf(PlacesRepository.fromExcel("places.xlsx").get(2).getName());
+        String expectedName = "Lviv";
+        Assert.assertEquals(PlacesRepository.fromExcel().get(2).getName(), expectedName);
     }
 
 }

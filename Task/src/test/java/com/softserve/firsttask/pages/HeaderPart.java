@@ -130,7 +130,7 @@ public abstract class HeaderPart {
         return getLatestPlaces().getText();
     }
 
-    public void clicklatestPlaces() {
+    public void clickLatestPlaces() {
         getLatestPlaces().click();
     }
 
@@ -178,7 +178,7 @@ public abstract class HeaderPart {
 
     // Functional
 
-    public HomePage gotoHomePage() {
+    public HomePage goToHomePage() {
         clickHome();
         return new HomePage(driver);
     }
