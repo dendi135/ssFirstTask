@@ -8,6 +8,6 @@ public interface ExternalReader {
     String FILE_NOT_CLOSE_EXCEPTION = "File %s could not be closed";
     String DB_READING_ERROR = "DB Reading Error, %s";
 
-    List<List<String>> getAllCells(); // public abstract
+    List<List<String>> getAllCells();
     List<List<String>> getAllCells(String path);
 }
