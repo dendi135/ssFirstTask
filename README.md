@@ -8,6 +8,6 @@ Task 1.
 
 # Launch instruction
 1. You have to have Mac OSX to open these tests and Goggle Chrome version 75.
-2. If you don't have this version of browser or OS - update your browser or change WebDriver version in "pom.xml" file in Surefire plugin section.
+2. If you don't have this version of browser or OS - update your browser or change WebDriver version in "pom.xml" file in Surefire plugin section or "webdriver.version" property.
 3. Open project in your IDE
 4. Run Maven test phase (use "mvn test" command)
