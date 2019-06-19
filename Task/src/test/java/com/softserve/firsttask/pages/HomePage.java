@@ -45,7 +45,7 @@ public class HomePage extends HeaderPart {
 
     // grayBox
 
-    public WebElement getGrayBox() {
+    private WebElement getGrayBox() {
         return grayBox;
     }
 
