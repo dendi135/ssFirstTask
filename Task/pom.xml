@@ -117,19 +117,6 @@
                         <phase>test-compile</phase>
                     </execution>
                 </executions>
-                <configuration>
-                    <installationDirectory>${project.build.directory}/test-classes</installationDirectory>
-                    <keepDownloadedWebdrivers>true</keepDownloadedWebdrivers>
-                    <drivers>
-                        <driver>
-                            <name>chromedriver</name>
-                            <platform>${os.detected.name}</platform>
-                            <bit>32</bit>
-                            <version>${webdriver.version}</version>
-                            <url>${webdriver.download.link}</url>
-                        </driver>
-                    </drivers>
-                </configuration>
             </plugin>
 
             <plugin>
