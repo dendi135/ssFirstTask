@@ -10,3 +10,9 @@ Task 1.
 1. Make sure that your Goggle Chrome version is 75.
 2. If you don't have this version of browser - update your browser or change WebDriver version in "pom.xml" file in Surefire plugin section or "webdriver.version" property.
 4. Run Maven test phase (use "mvn clean test" command)
+
+# Launch with RemoteWebDriver (with Docker)
+--- Make sure that docker is installed on your computer! ---
+1. Open your favorite terminal
+2. Go to "scripts" folder in project main directory (.../ssFirstTask/Task/scripts)
+3. Run command "./run-tests.sh"

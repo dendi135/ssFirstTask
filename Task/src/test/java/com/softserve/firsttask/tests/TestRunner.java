@@ -1,28 +1,31 @@
 package com.softserve.firsttask.tests;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import com.softserve.firsttask.pages.HomePage;
+import com.softserve.firsttask.tools.IniReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 public abstract class TestRunner {
 
     protected WebDriver driver;
+    IniReader iniReader = new IniReader("/Users/mburk/GitRepos/ssFirstTask/Task/src/test/resources/data.ini");
 
-    private final String SERVER_URL = "https://www.latlong.net/";
+    private final String SERVER_URL = iniReader.getValueAsString("links", "server_url");
+    private final String DOCKER_URL = iniReader.getValueAsString("links", "docker_url");;
 
     @BeforeClass
-    public void beforeClass() {
-        URL url = this.getClass().getResource("/chromedriver-osx-32bit");
-        System.setProperty("webdriver.chrome.driver", url.getPath());
-        driver = new ChromeDriver();
+    @Parameters(value = {"browser"})
+    public void setupTest(String browser) throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", browser);
+        driver = new RemoteWebDriver(new URL(DOCKER_URL), capabilities);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

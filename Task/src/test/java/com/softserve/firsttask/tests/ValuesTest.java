@@ -3,6 +3,7 @@ package com.softserve.firsttask.tests;
 import com.softserve.firsttask.data.City;
 import com.softserve.firsttask.data.PlacesRepository;
 import com.softserve.firsttask.pages.SearchPlaceComponent;
+import com.softserve.firsttask.tools.IniReader;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
