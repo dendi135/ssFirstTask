@@ -11,21 +11,21 @@ public class SmokeTest extends TestRunner {
     @Test
     public void smokeTest() {
         HomePage homePage  = loadApplication();
-        String expectedTitle = "Get Latitude and Longitude";
+        String expectedTitle = iniReader.getValueAsString("inscriptions", "ins_1");
         Assert.assertEquals(homePage.getTitleWordsText(), expectedTitle);
     }
 
     @Test
     public void pageObjectFunctionalTest() {
         HomePage homePage = loadApplication()
-                .findByPlaceName("Kyiv");
-        String expectedLat = "50.447731";
+                .findByPlaceName(iniReader.getValueAsString("cities", "kyiv"));
+        String expectedLat = iniReader.getValueAsString("coordinates", "coord_1");
         Assert.assertEquals(homePage.getGrayBoxComponent().getLatitudeValue(), expectedLat);
     }
 
     @Test
     public void externalReaderTest() {
-        String expectedName = "Ivano-Frankivsk";
+        String expectedName = iniReader.getValueAsString("cities", "if");
         Assert.assertEquals(PlacesRepository.fromExcel().get(2).getName(), expectedName);
     }
 

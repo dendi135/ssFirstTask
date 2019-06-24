@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import com.softserve.firsttask.pages.HomePage;
+import com.softserve.firsttask.tools.IniReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,9 +15,10 @@ import org.testng.annotations.*;
 public abstract class TestRunner {
 
     protected WebDriver driver;
+    IniReader iniReader = new IniReader("/Users/mburk/GitRepos/ssFirstTask/Task/src/test/resources/data.ini");
 
-    private final String SERVER_URL = "https://www.latlong.net/";
-    private final String DOCKER_URL = "http://selenium-hub:4444/wd/hub";
+    private final String SERVER_URL = iniReader.getValueAsString("links", "server_url");
+    private final String DOCKER_URL = iniReader.getValueAsString("links", "docker_url");;
 
     @BeforeClass
     @Parameters(value = {"browser"})
