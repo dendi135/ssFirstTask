@@ -16,7 +16,6 @@ public abstract class TestRunner {
     protected WebDriver driver;
 
     private final String SERVER_URL = "https://www.latlong.net/";
-    // private final String DOCKER_URL = "http://host.docker.internal:4444/wd/hub";
     private final String DOCKER_URL = "http://selenium-hub:4444/wd/hub";
 
     @BeforeClass
